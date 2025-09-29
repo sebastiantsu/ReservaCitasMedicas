@@ -5,19 +5,19 @@ import { ArrowLeft, Check } from 'lucide-react-native';
 import { COLORS } from '../src/styles/colors';
 import { styles } from '../src/styles/verificationScreen.styles';
 
-export default function VerificationScreen(): JSX.Element {
+export default function VerificationScreen() {
   const router = useRouter();
   const params = useLocalSearchParams();
   
-  const date: Date = params.date ? new Date(params.date as string) : new Date();
-  const time: string = params.time as string || '9:41 AM';
+  const date = params.date ? new Date(params.date as string) : new Date();
+  const time = params.time as string || '9:41 AM';
 
-  const formatDate = (date: Date): string => {
-    const months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const formatDate = (date: Date) => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
   };
 
-  const formatTime = (timeString: string): string => {
+  const formatTime = (timeString: string) => {
     const startTime = timeString.split(' - ')[0];
     return startTime.toUpperCase();
   };

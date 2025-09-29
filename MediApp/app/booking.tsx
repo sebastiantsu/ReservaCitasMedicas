@@ -1,17 +1,17 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, ScrollView, SafeAreaView } from 'react-native';
-import Calendar from '../src/components/Calendar';
-import TimeSlotPicker from '../src/components/TimeSlotPicker';
-import ConfirmationCard from '../src/components/ConfirmationCard';
+import Calendar from '../components/Calendar';
+import TimeSlotPicker from '../components/TimeSlotPicker';
+import ConfirmationCard from '../components/ConfirmationCard';
 import { styles } from '../src/styles/bookingScreen.styles';
 
-export default function BookingScreen(): JSX.Element {
+export default function BookingScreen() {
   const router = useRouter();
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date(2025, 3, 20));
-  const [selectedTime, setSelectedTime] = useState<string>('9:41 am - 10:41 am');
+  const [selectedDate, setSelectedDate] = useState(new Date(2025, 3, 20));
+  const [selectedTime, setSelectedTime] = useState('9:41 am - 10:41 am');
 
-  const handleConfirm = (): void => {
+  const handleConfirm = () => {
     router.push({
       pathname: '/verification',
       params: {
@@ -21,7 +21,7 @@ export default function BookingScreen(): JSX.Element {
     });
   };
 
-  const handleTimeSelect = (): void => {
+  const handleTimeSelect = () => {
     console.log('Abrir selector de horarios');
   };
 

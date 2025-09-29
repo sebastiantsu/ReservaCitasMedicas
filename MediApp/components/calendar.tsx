@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { ArrowLeft, ArrowRight } from 'lucide-react-native';
-import { COLORS } from '../styles/colors';
+import { COLORS } from '../src/styles/colors';
 import { styles } from './styles/calendar.styles';
 
 interface CalendarProps {
@@ -10,45 +10,43 @@ interface CalendarProps {
 }
 
 const Calendar: React.FC<CalendarProps> = ({ selectedDate, onDateSelect }) => {
-  const [currentMonth, setCurrentMonth] = useState<Date>(new Date(2025, 3));
+  const [currentMonth, setCurrentMonth] = useState(new Date(2025, 3));
 
-  const daysInMonth: number = new Date(
+  const daysInMonth = new Date(
     currentMonth.getFullYear(),
     currentMonth.getMonth() + 1,
     0
   ).getDate();
 
-  const firstDayOfMonth: number = new Date(
+  const firstDayOfMonth = new Date(
     currentMonth.getFullYear(),
     currentMonth.getMonth(),
     1
   ).getDay();
 
-  const monthNames: string[] = [
+  const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
 
-  const dayNames: string[] = ['SUN', 'MON', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+  const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
-  const changeMonth = (direction: number): void => {
+  const changeMonth = (direction: number) => {
     const newMonth = new Date(currentMonth);
     newMonth.setMonth(currentMonth.getMonth() + direction);
     setCurrentMonth(newMonth);
   };
 
-  const renderCalendarDays = (): JSX.Element[] => {
-    const days: JSX.Element[] = [];
+  const renderCalendarDays = () => {
+    const days = [];
     
-    // Días vacíos del mes anterior
     for (let i = 0; i < firstDayOfMonth; i++) {
       days.push(<View key={`empty-${i}`} style={styles.calendarDay} />);
     }
 
-    // Días del mes actual
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
-      const isSelected: boolean = 
+      const isSelected = 
         selectedDate?.getDate() === day && 
         selectedDate?.getMonth() === currentMonth.getMonth() &&
         selectedDate?.getFullYear() === currentMonth.getFullYear();
@@ -86,7 +84,7 @@ const Calendar: React.FC<CalendarProps> = ({ selectedDate, onDateSelect }) => {
       </View>
 
       <View style={styles.weekDaysContainer}>
-        {dayNames.map((day: string, index: number) => (
+        {dayNames.map((day, index) => (
           <Text key={index} style={styles.weekDayText}>
             {day}
           </Text>

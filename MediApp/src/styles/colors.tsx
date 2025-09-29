@@ -1,5 +1,3 @@
-// Paleta de colores de la aplicación
-
 export const COLORS = {
   // Colores principales
   primary: '#6366F1',
@@ -16,9 +14,6 @@ export const COLORS = {
   blue: '#3B82F6',
   success: '#10B981',
   successLight: '#D1FAE5',
-} as const;
-
-// Tipo para las claves de colores (opcional, para type safety)
-export type ColorKeys = keyof typeof COLORS;
+};
 
 export default COLORS;

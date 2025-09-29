@@ -9,8 +9,8 @@ interface ConfirmationCardProps {
 }
 
 const ConfirmationCard: React.FC<ConfirmationCardProps> = ({ date, time, onConfirm }) => {
-  const formatDate = (date: Date): string => {
-    const months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const formatDate = (date: Date) => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
   };
 

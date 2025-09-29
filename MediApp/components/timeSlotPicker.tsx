@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Search } from 'lucide-react-native';
-import { COLORS } from '../styles/colors';
+import { COLORS } from '../src/styles/colors';
 import { styles } from './styles/timeSlotPicker.styles';
 
 interface TimeSlotPickerProps {
