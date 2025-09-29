@@ -1,4 +1,3 @@
-// src/components/styles/timeSlotPicker.styles.tsx
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../styles/colors';
 

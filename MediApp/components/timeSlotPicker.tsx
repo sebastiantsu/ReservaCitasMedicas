@@ -1,4 +1,3 @@
-// src/components/TimeSlotPicker.tsx
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Search } from 'lucide-react-native';

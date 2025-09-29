@@ -1,4 +1,3 @@
-// src/styles/colors.tsx
 // Paleta de colores de la aplicación
 
 export const COLORS = {

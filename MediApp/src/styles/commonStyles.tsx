@@ -1,4 +1,3 @@
-// Estilos comunes reutilizables en toda la app
 
 import { ViewStyle } from 'react-native';
 
