@@ -1,12 +1,12 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { View, Text, ScrollView, SafeAreaView } from 'react-native';
-import Calendar from '../src/components/Calendar';
-import TimeSlotPicker from '../src/components/TimeSlotPicker';
-import ConfirmationCard from '../src/components/ConfirmationCard';
-import { styles } from '../src/styles/bookingScreen.styles';
+import { SafeAreaView, ScrollView, Text, View } from 'react-native';
+import Calendar from '../components/calendar';
+import ConfirmationCard from '../components/confirmationCard';
+import { styles } from '../components/styles/bookingScreen.styles';
+import TimeSlotPicker from '../components/timeSlotPicker';
 
-export default function BookingScreen(): JSX.Element {
+export default function BookingScreen(): React.JSX.Element {
   const router = useRouter();
   const [selectedDate, setSelectedDate] = useState<Date>(new Date(2025, 3, 20));
   const [selectedTime, setSelectedTime] = useState<string>('9:41 am - 10:41 am');

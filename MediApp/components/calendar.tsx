@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
 import { ArrowLeft, ArrowRight } from 'lucide-react-native';
-import { COLORS } from '../styles/colors';
+import React, { useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles/calendar.styles';
+import { COLORS } from './styles/colors';
 
 interface CalendarProps {
   selectedDate: Date;
@@ -29,7 +29,7 @@ const Calendar: React.FC<CalendarProps> = ({ selectedDate, onDateSelect }) => {
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
 
-  const dayNames: string[] = ['SUN', 'MON', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+  const dayNames: string[] = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
   const changeMonth = (direction: number): void => {
     const newMonth = new Date(currentMonth);
@@ -37,8 +37,8 @@ const Calendar: React.FC<CalendarProps> = ({ selectedDate, onDateSelect }) => {
     setCurrentMonth(newMonth);
   };
 
-  const renderCalendarDays = (): JSX.Element[] => {
-    const days: JSX.Element[] = [];
+  const renderCalendarDays = (): React.JSX.Element[] => {
+    const days: React.JSX.Element[] = [];
     
     // Días vacíos del mes anterior
     for (let i = 0; i < firstDayOfMonth; i++) {

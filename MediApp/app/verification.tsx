@@ -1,11 +1,11 @@
-import { useRouter, useLocalSearchParams } from 'expo-router';
-import React from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ArrowLeft, Check } from 'lucide-react-native';
+import React from 'react';
+import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import { styles } from '../components/styles/verificationScreen.styles';
 import { COLORS } from '../src/styles/colors';
-import { styles } from '../src/styles/verificationScreen.styles';
 
-export default function VerificationScreen(): JSX.Element {
+export default function VerificationScreen(): React.JSX.Element {
   const router = useRouter();
   const params = useLocalSearchParams();
   
