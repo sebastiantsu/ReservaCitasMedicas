@@ -23,10 +23,15 @@ if (!API_KEY) {
 app.use(express.json());
 
 // 4. Importar Rutas
-const authRoutes = require('./routes/auth');
+const express = require('express');
+const authRoutes = require('./routes/auth');     
+const protectedRoutes = require('./routes/protected');
+const uploadRoutes = require('./routes/upload');
 
 // 5. Usar las Rutas
 app.use('/api/auth', authRoutes); 
+app.use('/api', protectedRoutes);
+app.use('/api', uploadRoutes);
 
 // Endpoint para consultar nutrición de un alimento
 app.get('/nutrition', async (req, res) => {
